@@ -4,9 +4,9 @@ Python scripts to retrieve and process data.
 
 ## Files Description
 
-1. **get_endpoint_html.py** - This script is designed to fetch the content of an ICPC endpoint and store it as HTML.
+1. **get_endpoint_html.py** - This script is designed to fetch the content of an IPCC endpoint and store it as HTML.
 
-2. **get_glossary.py** - This script retrieves and processes ICPC glossary data.
+2. **get_glossary.py** - This script retrieves and processes IPCC glossary data.
 
 ## Usage
 

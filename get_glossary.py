@@ -2,12 +2,13 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from get_endpoint_html import setup_driver
 import time
 import os
 
 # Author: Ayush Garg
 # Start the browser and navigate to the page
-driver = webdriver.Chrome()
+driver = setup_driver()
 driver.get("https://apps.ipcc.ch/glossary/")
 
 # Define the expected page letters for pagination

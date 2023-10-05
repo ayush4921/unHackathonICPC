@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from get_endpoint_html import setup_driver
+from get_endpoint_html import setup_driver, safe_click_element
 import time
 import os
 
@@ -48,7 +48,7 @@ for letter in page_letters:
             (By.CSS_SELECTOR, f'a.page-link.prefixlink[data-prefix="{letter}"]')
         )
     )
-    page_link.click()
+    safe_click_element(driver, page_link)
 
     # Wait for the table to load
     time.sleep(3)
@@ -64,7 +64,7 @@ for letter in page_letters:
         )  # make it safe for a filename
 
         # Click the span to open the modal
-        span.click()
+        safe_click_element(driver, span)
 
         # Wait for the modal to load
         time.sleep(3)
@@ -84,7 +84,7 @@ for letter in page_letters:
         close_button = driver.find_element(
             By.CSS_SELECTOR, 'button.btn.btn-outline-primary[data-bs-dismiss="modal"]'
         )
-        close_button.click()
+        safe_click_element(driver, close_button)
 
         # Wait for the modal to close
         time.sleep(1)

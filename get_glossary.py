@@ -77,7 +77,7 @@ for letter in page_letters:
         filename = f"{safe_title}_{letter}.html"
 
         # Save content to the file
-        with open(os.path.join(filename), "w", encoding="utf-8") as f:
+        with open(os.path.join("html_files", filename), "w", encoding="utf-8") as f:
             f.write(modal_content)
 
         # Close the modal

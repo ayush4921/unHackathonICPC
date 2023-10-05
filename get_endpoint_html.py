@@ -10,6 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementClickInterceptedException
 import logging
+import os
 
 # Author: Ayush Garg
 
@@ -22,8 +23,9 @@ def setup_driver():
     options = webdriver.ChromeOptions()
     # options.add_argument("--headless")
     options.page_load_strategy = "none"
-    chrome_path = ChromeDriverManager().install()
-    chrome_service = Service(chrome_path)
+    # chrome_path = ChromeDriverManager().install()
+    # chrome_service = Service(chrome_path)
+    chrome_service = Service(os.path.join(os.getcwd(), "chromedriver"))
     driver = Chrome(options=options, service=chrome_service)
     return driver
 
